@@ -1,0 +1,20 @@
+-- Created by Kamran Rana & Shahmir Ahmed
+-- 03/28/2016
+
+--Table user
+CREATE TABLE User(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	firstName VARCHAR(64) NOT NULL,
+	lastName VARCHAR(64) NOT NULL,
+	email VARCHAR(64) NOT NULL,
+	password VARCHAR(64) NOT NULL, 
+	year INT NOT NULL, 
+	major VARCHAR(64) NOT NULL, 
+	skill1 VARCHAR(128) NOT NULL, 
+	skill2 VARCHAR(128) NOT NULL, 
+	skill3 VARCHAR(128) NOT NULL, 
+	skill4 VARCHAR(128) NOT NULL, 
+	skill5 VARCHAR(128) NOT NULL
+);
+
+
