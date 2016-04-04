@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UserCreateDlg" widgetVar="UserCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateUserTitle}">
+            <h:form id="UserCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{userController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateUserLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{userController.selected.id}" title="#{bundle.CreateUserTitle_id}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_firstName}" for="firstName" />
+                        <p:inputText id="firstName" value="#{userController.selected.firstName}" title="#{bundle.CreateUserTitle_firstName}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_firstName}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_lastName}" for="lastName" />
+                        <p:inputText id="lastName" value="#{userController.selected.lastName}" title="#{bundle.CreateUserTitle_lastName}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_lastName}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{userController.selected.email}" title="#{bundle.CreateUserTitle_email}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_email}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_password}" for="password" />
+                        <p:inputText id="password" value="#{userController.selected.password}" title="#{bundle.CreateUserTitle_password}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_password}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_securityQuestion}" for="securityQuestion" />
+                        <p:inputText id="securityQuestion" value="#{userController.selected.securityQuestion}" title="#{bundle.CreateUserTitle_securityQuestion}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_securityQuestion}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_securityAnswer}" for="securityAnswer" />
+                        <p:inputText id="securityAnswer" value="#{userController.selected.securityAnswer}" title="#{bundle.CreateUserTitle_securityAnswer}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_securityAnswer}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_schoolYear}" for="schoolYear" />
+                        <p:inputText id="schoolYear" value="#{userController.selected.schoolYear}" title="#{bundle.CreateUserTitle_schoolYear}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_schoolYear}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_major}" for="major" />
+                        <p:inputText id="major" value="#{userController.selected.major}" title="#{bundle.CreateUserTitle_major}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_major}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_category1}" for="category1" />
+                        <p:inputText id="category1" value="#{userController.selected.category1}" title="#{bundle.CreateUserTitle_category1}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_category1}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_skill1}" for="skill1" />
+                        <p:inputText id="skill1" value="#{userController.selected.skill1}" title="#{bundle.CreateUserTitle_skill1}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_skill1}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_category2}" for="category2" />
+                        <p:inputText id="category2" value="#{userController.selected.category2}" title="#{bundle.CreateUserTitle_category2}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_category2}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_skill2}" for="skill2" />
+                        <p:inputText id="skill2" value="#{userController.selected.skill2}" title="#{bundle.CreateUserTitle_skill2}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_skill2}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_category3}" for="category3" />
+                        <p:inputText id="category3" value="#{userController.selected.category3}" title="#{bundle.CreateUserTitle_category3}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_category3}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_skill3}" for="skill3" />
+                        <p:inputText id="skill3" value="#{userController.selected.skill3}" title="#{bundle.CreateUserTitle_skill3}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_skill3}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_category4}" for="category4" />
+                        <p:inputText id="category4" value="#{userController.selected.category4}" title="#{bundle.CreateUserTitle_category4}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_category4}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_skill4}" for="skill4" />
+                        <p:inputText id="skill4" value="#{userController.selected.skill4}" title="#{bundle.CreateUserTitle_skill4}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_skill4}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_category5}" for="category5" />
+                        <p:inputText id="category5" value="#{userController.selected.category5}" title="#{bundle.CreateUserTitle_category5}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_category5}"/>
+                        <p:outputLabel value="#{bundle.CreateUserLabel_skill5}" for="skill5" />
+                        <p:inputText id="skill5" value="#{userController.selected.skill5}" title="#{bundle.CreateUserTitle_skill5}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_skill5}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{userController.create}" value="#{bundle.Save}" update="display,:UserListForm:datalist,:growl" oncomplete="handleSubmit(args,'UserCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UserCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
