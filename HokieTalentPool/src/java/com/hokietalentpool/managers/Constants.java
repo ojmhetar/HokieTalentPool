@@ -33,5 +33,11 @@ public class Constants {
     "What is the last name of your most favorite teacher?",
     "What is your father's middle name?",
     "What is your most favorite pet's name?"};
+    
+    public static final String[] CATEGORIES = { "Business",
+        "Engineering",
+        "Marketing"
+        
+    };
 
 }
