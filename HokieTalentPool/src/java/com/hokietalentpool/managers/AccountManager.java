@@ -29,24 +29,29 @@ public class AccountManager implements Serializable {
  
     // Instance Variables (Properties)
     private String firstName;
-    private String middleName;
     private String lastName;
     private String username;
     private String password;
     private String email;
     private String statusMessage;
-    private int height;
-    private int weight;
-    private String address1;
-    private String address2;
-    private String city;
-    private String state;
-    private int zipcode;
     private int security_question;
     private String security_answer;
-        
-    private final String[] listOfStates = Constants.STATES;
+    private int schoolYear; 
+    private String major;
+    private String category1;
+    private String skill1; 
+    private String category2;
+    private String skill2; 
+    private String category3;
+    private String skill3; 
+    private String category4;
+    private String skill4; 
+    private String category5;
+    private String skill5; 
+    
+    private final String[] categoryList = Constants.CATEGORIES;
     private Map<String, Object> security_questions;
+    private Map<String, Object> categories; 
     
     private User selected;
     
@@ -66,25 +71,12 @@ public class AccountManager implements Serializable {
 //    @EJB
 //    private PhotoFacade photoFacade;
 
-    public String[] getListOfStates() {
-        return listOfStates;
+  
+
+    public String[] getCategoryList() {
+        return categoryList; 
     }
 
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
 
     /**
      * Creates a new instance of AccountManager
@@ -104,14 +96,6 @@ public class AccountManager implements Serializable {
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
     }
 
     /**
@@ -170,47 +154,49 @@ public class AccountManager implements Serializable {
         this.email = email;
     }
 
-    public String getAddress1() {
-        return address1;
+
+    
+    public void setCategory1(String category) {
+        this.category1 = category;
     }
 
-    public void setAddress1(String address1) {
-        this.address1 = address1;
-    }
-
-    public String getAddress2() {
-        return address2;
-    }
-
-    public void setAddress2(String address2) {
-        this.address2 = address2;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public int getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(int zipcode) {
-        this.zipcode = zipcode;
+    public String getCategory1() {
+        return category1;
     }
     
-    public int getSecurity_question() {
+    public void setCategory2(String category) {
+        this.category2 = category;
+    }
+
+    public String getCategory2() {
+        return category2;
+    }
+    
+    public void setCategory3(String category) {
+        this.category3 = category;
+    }
+
+    public String getCategory3() {
+        return category3;
+    }
+    
+    public void setCategory4(String category) {
+        this.category4 = category;
+    }
+
+    public String getCategory4() {
+        return category4;
+    }
+    
+    public void setCategory5(String category) {
+        this.category5 = category;
+    }
+
+    public String getCategory5() {
+        return category5;
+    }
+    
+     public int getSecurity_question() {
         return security_question;
     }
 
@@ -234,6 +220,16 @@ public class AccountManager implements Serializable {
             }
         }
         return security_questions;
+    }
+    
+    public Map<String, Object> getCategories() {
+        if (categories == null) {
+            categories = new LinkedHashMap<>();
+            for (int i = 0; i < Constants.CATEGORIES.length; i++) {
+                categories.put(Constants.CATEGORIES[i], i);
+            }
+        }
+        return categories;
     }
     
     /**
@@ -400,9 +396,9 @@ public class AccountManager implements Serializable {
 
     public String logout() {
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().clear();
-        username = firstName = middleName = lastName = password = email = statusMessage = "";
-        address1 = address2 = city = state = security_answer = "";
-        height = weight = security_question = 0;
+        username = firstName = lastName = password = email = statusMessage = "";
+        security_answer  =  "";
+        security_question = 0;
         
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "/index.xhtml?faces-redirect=true";
