@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>Sign In</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+       
+            <!-- Page title -->
+            <title><ui:define name="title">Hokie Talent Pool</ui:define></title>
+            <!-- Additional CSS files needed -->
+         
+                <link rel="stylesheet" type="text/css" href="resources/css/recommendations.css"/>
+            
+                <div id="page-title">Search Skills</div>
+                <div align="center"> 
+
+                    <h:form id="skill_search">
+                            <span class="section-header">Please enter skill to search for</span><br/><br/>
+                            <h:inputText id="skill-value" label="Skill to search for" class="input-control"
+                                             value="#{skillManager.query}"
+                                             required="true" requiredMessage="Please enter a item to search for." />
+                            
+                            <h:commandButton id="skill-search-btn" class="btn" value="Search"
+                                             action="#{skillManager.searchSkills()}" />
+                    </h:form>
+                    <br /><br />
+                    
+                    <h:form id="category_search">
+                            <span class="section-header">Please enter category to search for</span><br/><br/>
+                            <h:inputText id="category-value" label="Category to search for" class="input-control"
+                                             value="#{skillManager.queryCategory}"
+                                             required="true" requiredMessage="Please enter a category to search for." />
+                            
+                            <h:commandButton id="category-search-btn" class="btn" value="Search"
+                                             action="#{skillManager.searchCategory()}" />
+                    </h:form>
+                    <br /><br />
+                    
+                    
+                    <!--Display the results for the table -->
+                    <p:dataTable class="rec-table" var="skill" value="#{skillManager.results}">
+
+                        <p:column headerText="User's first name">
+                            <h:outputText value="#{skill.userId.firstName}" />
+                        </p:column>
+                        
+                        <p:column headerText="Category">
+                            <h:outputText value="#{skill.category}" />
+                        </p:column>
+                        
+                        <p:column headerText="Skill">
+                            <h:outputText value="#{skill.skillName}" />
+                        </p:column>
+                        
+                        <p:column headerText="Contact">
+                            <h:outputText value="#{skill.userId.email}" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                    <br /><br /><br /><br /><br /><br />
+                    
+              
+                </div>
+           
+    </body>
+</html>
