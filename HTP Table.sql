@@ -7,6 +7,7 @@ CREATE TABLE User(
 	firstName VARCHAR(64) NOT NULL,
 	lastName VARCHAR(64) NOT NULL,
 	email VARCHAR(64) NOT NULL,
+	username VARCHAR(64) NOT NULL, 
 	password VARCHAR(64) NOT NULL, 
 	security_question INT NOT NULL,
     security_answer VARCHAR (255) NOT NULL,
