@@ -4,11 +4,12 @@
  */
 package com.hokietalentpool.managers;
 
+import com.hokietalentpool.entitypackage.Skill;
 import com.hokietalentpool.entitypackage.User;
+import com.hokietalentpool.sessionbeanpackage.SkillFacade;
 import com.hokietalentpool.sessionbeanpackage.UserFacade;
 import java.io.Serializable;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import javax.ejb.EJB;
 import javax.ejb.EJBException;
@@ -62,6 +63,9 @@ public class AccountManager implements Serializable {
      */
     @EJB
     private UserFacade userFacade;
+    
+    @EJB
+    private SkillFacade skillFacade;
 
     /**
      * The instance variable 'photoFacade' is annotated with the @EJB annotation.
@@ -331,8 +335,7 @@ public class AccountManager implements Serializable {
                 user.setSkill3(skill3);
                 user.setSkill4(skill4);
                 user.setSkill5(skill5);
-                
-              
+                       
              
                 userFacade.create(user);                
             } catch (EJBException e) {
@@ -341,6 +344,30 @@ public class AccountManager implements Serializable {
                 return "";
             }
             initializeSessionMap();
+            User skillUser = userFacade.findByUsername(username);
+            int auto = 0; 
+            try {
+                Skill skillEntry1 = new Skill(auto, category1, skill1);
+                skillEntry1.setUserId(skillUser);
+                Skill skillEntry2 = new Skill(auto, category2, skill2);
+                skillEntry2.setUserId(skillUser);
+                Skill skillEntry3 = new Skill(auto, category3, skill3);
+                skillEntry3.setUserId(skillUser);
+                Skill skillEntry4 = new Skill(auto, category4, skill4);
+                skillEntry4.setUserId(skillUser);
+                Skill skillEntry5 = new Skill(auto, category5, skill5);
+                skillEntry5.setUserId(skillUser);
+                
+                skillFacade.create(skillEntry1);
+                skillFacade.create(skillEntry2);
+                skillFacade.create(skillEntry3);
+                skillFacade.create(skillEntry4);
+                skillFacade.create(skillEntry5);
+                
+            } catch (EJBException e) {
+                statusMessage = "Problem with skills.";
+                return ""; 
+            }
             return "Profile";
         }
         return "";
