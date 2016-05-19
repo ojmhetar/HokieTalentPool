@@ -7,6 +7,7 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Create Account</title>
@@ -40,19 +41,6 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                     </h:inputText>
                     <p:message for="lastName" display="icon" />
 
-                    <p:outputLabel for="height" value="Height in Inches: " />
-                    <h:inputText id="height" value="#{accountManager.height}" 
-                                 required="true" label="height">
-                        <f:validateLongRange minimum="36" maximum="96" />
-                    </h:inputText>
-                    <p:message for="height" display="icon" />
-
-                    <p:outputLabel for="weight" value="Weight in Pounds: " />
-                    <h:inputText id="weight" value="#{accountManager.weight}" 
-                                 required="true" label="weight">
-                        <f:validateLongRange minimum="50" maximum="400" />
-                    </h:inputText>
-                    <p:message for="weight" display="icon" />
                     
    
                     <p:outputLabel for="email" value="Email:" />
@@ -83,12 +71,70 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                     </h:inputSecret>
                     <p:message for="confirmPassword" display="icon"/>
                     
-                    <p:outputLabel for="state" value="State" />
-                    <h:selectOneMenu id="state" value="#{accountManager.category}" required="true">
-                        <f:selectItems value="#{accountManager.categoryList}" var="state"
-                                       itemLabel="#{category}" itemValue="#{category}"/>
+                    <h:selectOneMenu id="category1" label="Activity Goal"
+                                     value="#{accountManager.category1}" required="true"
+                                                 requiredMessage="Category is required.">
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
                     </h:selectOneMenu>
-                    <p:message for="state" display="icon" />
+                    
+                    <h:inputText id="skill1" label="Skill 1" value="#{accountManager.skill1}" a:placeholder="Skill 1"
+                                             required="true" requiredMessage="Last Name is required." />
+                    <p:message for="skill1" display="icon" />
+                    
+                    <h:selectOneMenu id="category2" label="Activity Goal"
+                                     value="#{accountManager.category2}" required="true"
+                                                 requiredMessage="Category is required.">
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
+                    </h:selectOneMenu>
+                    
+                    <h:inputText id="skill2" label="Skill 2" value="#{accountManager.skill2}" a:placeholder="Skill 2"
+                                             required="true" requiredMessage="Last Name is required." />
+                    <p:message for="skill2" display="icon" />
+                    
+                    <h:selectOneMenu id="category3" label="Activity Goal"
+                                     value="#{accountManager.category3}" required="true"
+                                                 requiredMessage="Category is required.">
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
+                    </h:selectOneMenu>
+                    
+                    <h:inputText id="skill3" label="Skill 3" value="#{accountManager.skill3}" a:placeholder="Skill 3"
+                                             required="true" requiredMessage="Last Name is required." />
+                    <p:message for="skill3" display="icon" />
+                    
+                    <h:selectOneMenu id="category4" label="Activity Goal"
+                                     value="#{accountManager.category4}" required="true"
+                                                 requiredMessage="Category is required.">
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
+                    </h:selectOneMenu>
+                    
+                    <h:inputText id="skill4" label="Skill 4" value="#{accountManager.skill4}" a:placeholder="Skill 4"
+                                             required="true" requiredMessage="Last Name is required." />
+                    <p:message for="skill4" display="icon" />
+                    
+                    <h:selectOneMenu id="category5" label="Activity Goal"
+                                     value="#{accountManager.category5}" required="true"
+                                                 requiredMessage="Category is required.">
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
+                    </h:selectOneMenu>
+                    
+                    <h:inputText id="skill5" label="Skill 5" value="#{accountManager.skill5}" a:placeholder="Skill 5"
+                                             required="true" requiredMessage="Last Name is required." />
+                    <p:message for="skill5" display="icon" />
                     
                 </h:panelGrid>
             </p:panel>

@@ -1,0 +1,11 @@
+{
+"name": "HTP",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "*",
+    "mysql": "*",
+    "ejs": "*",
+    "body-parser": "^1.15.0"
+  }
+}
+

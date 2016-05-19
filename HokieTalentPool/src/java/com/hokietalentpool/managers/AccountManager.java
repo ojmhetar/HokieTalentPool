@@ -196,6 +196,46 @@ public class AccountManager implements Serializable {
         return category5;
     }
     
+    public String getSkill1() { 
+        return skill1; 
+    }
+    
+    public void setSkill1(String skill) {
+        this.skill1 = skill; 
+    }
+    
+    public String getSkill2() { 
+        return skill2; 
+    }
+    
+    public void setSkill2(String skill) {
+        this.skill2 = skill; 
+    }
+    
+    public String getSkill3() { 
+        return skill3; 
+    }
+    
+    public void setSkill3(String skill) {
+        this.skill3 = skill; 
+    }
+    
+    public String getSkill4() { 
+        return skill4; 
+    }
+    
+    public void setSkill4(String skill) {
+        this.skill4 = skill; 
+    }
+    
+    public String getSkill5() { 
+        return skill1; 
+    }
+    
+    public void setSkill5(String skill) {
+        this.skill5 = skill; 
+    }
+    
      public int getSecurity_question() {
         return security_question;
     }
@@ -274,22 +314,23 @@ public class AccountManager implements Serializable {
                 User user = new User();
                 user.setFirstName(firstName);
                 user.setLastName(lastName);                
-                user.setSecurityQuestion(security_question);
-                user.setSecurityAnswer(security_answer);
-                user.setEmail(email);              
+                user.setSecurityQuestion(1);
+                user.setSecurityAnswer("Test");
+                user.setEmail(email);  
+                user.setUsername(username);
                 user.setPassword(password);
-                user.setSchoolYear(4);
-                user.setMajor("CS");
-                user.setCategory1("Test");
-                user.setCategory2("Test");
-                user.setCategory3("Test");
-                user.setCategory4("Test");
-                user.setCategory5("Test");
-                user.setSkill1("Test");
-                user.setSkill2("Test");
-                user.setSkill3("Test");
-                user.setSkill4("Test");
-                user.setSkill5("Test");
+                user.setSchoolYear(2);
+                user.setMajor("Test");
+                user.setCategory1(category1);
+                user.setCategory2(category2);
+                user.setCategory3(category3);
+                user.setCategory4(category4);
+                user.setCategory5(category5);
+                user.setSkill1(skill1);
+                user.setSkill2(skill2);
+                user.setSkill3(skill3);
+                user.setSkill4(skill4);
+                user.setSkill5(skill5);
                 
               
              

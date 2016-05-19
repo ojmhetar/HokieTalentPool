@@ -3,6 +3,9 @@
   <persistence-unit name="HokieTalentPoolPU" transaction-type="JTA">
     <jta-data-source>java:app/jdbc/HTP</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <properties/>
+    <properties>
+        <property name="javax.persistence.jdbc.user" value="TBNF"/>
+        <property name="javax.persistence.jdbc.password" value="mhetarwhite"/>
+    </properties>
   </persistence-unit>
 </persistence>
