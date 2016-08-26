@@ -7,25 +7,8 @@
     <body>
         <ui:composition>
             <div id="header-inner-wrapper">
-                <a href="index.xhtml"><img id="betteru-logo" src="resources/images/betteru_logo_circle.png" alt="BetterU Logo"/></a>
-                <img id="betteru-name" src="resources/images/betteru_name.png" alt="BetterU Name" />
                 <div id="header-navigation">
-                    <c:if test="#{accountManager.isLoggedIn() == false}">
-                        <a href="SignIn.xhtml">Sign in</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="CreateAccount.xhtml">Create Account</a>
-                    </c:if>
-                    <c:if test="#{accountManager.isLoggedIn() == true}">
-                        <a href="DailyProgress.xhtml">Daily Overview</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="MyProgress.xhtml">My Progress</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="Recommendations.xhtml">Recommendations</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="Challenges.xhtml">Challenges</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="MyAccount.xhtml">My Account</a>
-                    </c:if>
+                    
                 </div>
             </div>
         </ui:composition>
