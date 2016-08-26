@@ -8,157 +8,154 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Create Account</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
-        <h:outputStylesheet library="css" name="globalStyles.css"/>
-    </h:head>
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:body>
-        <div align="center" style="width:50%; margin:0 auto;">
-            <h:form class="form-signin">
-                <h2 class="form-signin-heading">New Account</h2>
-                <br/>
-                <f:event listener="#{accountManager.validateInformation}" type="postValidate"/>
-                <p:panel id="panel" 
-                         style="width: 400px; border: 0px solid black">
-                <p:messages id="msgs" />
+        <ui:composition template="template/siteTemplate.xhtml">
+            <!-- Page title -->
+            <title><ui:define name="title">Nectar</ui:define></title>
+            <!-- Additional CSS styles needed -->
+            <ui:define name="css">
+                <link rel="stylesheet" type="text/css" href="resources/css/index.css"/>
+            </ui:define>
+            <!-- Additional JS files needed -->
+            
+            <!-- Page content -->
+            <ui:define name="editableContent">
+                <section class="hero is-primary is-fullheight"> 
+                <div class="hero-body">
+                <div class="container has-text-centered" align="center" style="width:50%; margin:0 auto;">
+                    <h:form class="form-signin">
+                        <h2 class="form-signin-heading">Create Account</h2>
+                        <br/>
+                        <f:event listener="#{accountManager.validateInformation}" type="postValidate"/>
+          
+                        <div id="form-create" class="columns">
+                            
+                            <div class="column"> </div>
+                            <div class="column">
+                        <p:messages id="msgs" />
 
-                <h:panelGrid columns="3" cellpadding="5">
-                    <p:outputLabel for="firstName" value="First Name" />
-                    <h:inputText id="firstName" value="#{accountManager.firstName}" 
-                                 required="true" label="First Name">
-                        <f:validateLength minimum="2" />
-                    </h:inputText>
-                    <p:message for="firstName" display="icon" />
-                                  
+                           
+                            <h:inputText id="firstName" value="#{accountManager.firstName}" 
+                                         required="true" label="First Name" class="input" a:placeholder="First">
+                                <f:validateLength minimum="2" />
+                            </h:inputText>
+                            <p:message for="firstName" display="icon" />
 
-                    <p:outputLabel for="lastName" value="Last Name" />
-                    <h:inputText id="lastName" value="#{accountManager.lastName}" 
-                                 required="true" label="Last Name">
-                        <f:validateLength minimum="2" />
-                    </h:inputText>
-                    <p:message for="lastName" display="icon" />
+
+                            <h:inputText id="lastName" value="#{accountManager.lastName}" 
+                                         required="true" label="Last Name" class="input" a:placeholder="Last">
+                                <f:validateLength minimum="2" />
+                            </h:inputText>
+                            <p:message for="lastName" display="icon" />
+
+
+                            <h:inputText id="email" value="#{accountManager.email}" 
+                                         label="Email" required="true" class="input" a:placeholder="Email">
+                                <f:validateLength minimum="2" />
+                                <f:validator validatorId="emailValidator" /> 
+                            </h:inputText>
+                            <p:message for="email" display="icon" />
+
+
+                            <h:inputSecret id="password" value="#{accountManager.password}" 
+                                        required="true" label="Password" class="input" a:placeholder="Password">
+                                <f:validator validatorId="passwordValidator" /> 
+                            </h:inputSecret>
+                            <p:message for="password" display="icon" />
+
+                           
+                            <h:inputSecret id="confirmPassword" 
+                                        required="true" label="Confirm Password" class="input" a:placeholder="Confirm Password">
+                            </h:inputSecret>
+                            <p:message for="confirmPassword" display="icon"/>
+
+<!--                            <h:selectOneMenu id="category1" label="Activity Goal"
+                                             value="#{accountManager.category1}" required="true"
+                                                         requiredMessage="Category is required." class="input">
+                                <f:selectItem itemValue="#{null}" itemLabel="Select Category" />
+                                <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                                <f:selectItem itemValue="Business" itemLabel="Business" />
+                                <f:selectItem itemValue="Design" itemLabel="Design" />
+                            </h:selectOneMenu>
+
+                            <h:inputText id="skill1" label="Skill 1" value="#{accountManager.skill1}" a:placeholder="Skill 1"
+                                                     required="true" requiredMessage="Last Name is required." class="input" />
+                            <p:message for="skill1" display="icon" />
+
+                            <h:selectOneMenu id="category2" label="Activity Goal"
+                                             value="#{accountManager.category2}" required="true"
+                                                         requiredMessage="Category is required." class="input">
+                                <f:selectItem itemValue="#{null}" itemLabel="-Select Category-" />
+                                <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                                <f:selectItem itemValue="Business" itemLabel="Business" />
+                                <f:selectItem itemValue="Design" itemLabel="Design" />
+                            </h:selectOneMenu>
+
+                            <h:inputText id="skill2" label="Skill 2" value="#{accountManager.skill2}" a:placeholder="Skill 2"
+                                                     required="true" requiredMessage="Last Name is required." class="input"/>
+                            <p:message for="skill2" display="icon" />
+
+                            <h:selectOneMenu id="category3" label="Activity Goal"
+                                             value="#{accountManager.category3}" required="true"
+                                                         requiredMessage="Category is required." class="input">
+                                <f:selectItem itemValue="#{null}" itemLabel="-Select Category-" />
+                                <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                                <f:selectItem itemValue="Business" itemLabel="Business" />
+                                <f:selectItem itemValue="Design" itemLabel="Design" />
+                            </h:selectOneMenu>
+
+                            <h:inputText id="skill3" label="Skill 3" value="#{accountManager.skill3}" a:placeholder="Skill 3"
+                                                     required="true" requiredMessage="Last Name is required." class="input" />
+                            <p:message for="skill3" display="icon" />
+
+                            <h:selectOneMenu id="category4" label="Activity Goal"
+                                             value="#{accountManager.category4}" required="true"
+                                                         requiredMessage="Category is required." class="input">
+                                <f:selectItem itemValue="#{null}" itemLabel="-Select Category-" />
+                                <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                                <f:selectItem itemValue="Business" itemLabel="Business" />
+                                <f:selectItem itemValue="Design" itemLabel="Design" />
+                            </h:selectOneMenu>
+
+                            <h:inputText id="skill4" label="Skill 4" value="#{accountManager.skill4}" a:placeholder="Skill 4"
+                                                     required="true" requiredMessage="Last Name is required." class="input"/>
+                            <p:message for="skill4" display="icon" />
+
+                            <h:selectOneMenu id="category5" label="Activity Goal"
+                                             value="#{accountManager.category5}" required="true"
+                                                         requiredMessage="Category is required." class="input">
+                                <f:selectItem itemValue="#{null}" itemLabel="-Select Category-" />
+                                <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                                <f:selectItem itemValue="Business" itemLabel="Business" />
+                                <f:selectItem itemValue="Design" itemLabel="Design" />
+                            </h:selectOneMenu>
+
+                            <h:inputText id="skill5" label="Skill 5" value="#{accountManager.skill5}" a:placeholder="Skill 5"
+                                                     required="true" requiredMessage="Last Name is required." class="input"/>
+                            <p:message for="skill5" display="icon" />-->
+
+                        
+                            
+                    <h:outputLabel id="error" value="#{accountManager.statusMessage}"  />
+                    <br/>
+                    <h:commandButton class="buttonText button is-success" id="submit" 
+                                     action="#{accountManager.createAccount()}" value="Submit" />   
+                    
+                    </div> 
+                   <div class="column"> </div> 
+                </div>
+                    
+                    </h:form>
 
                     
-   
-                    <p:outputLabel for="email" value="Email:" />
-                    <h:inputText id="email" value="#{accountManager.email}" 
-                                 label="Email" required="true">
-                        <f:validateLength minimum="2" />
-                        <f:validator validatorId="emailValidator" /> 
-                    </h:inputText>
-                    <p:message for="email" display="icon" />
-
-                    <p:outputLabel for="username" value="Username:" />
-                    <h:inputText id="username" value="#{accountManager.username}" 
-                                 required="true" label="Username">
-                        <f:validateLength minimum="4" />
-                    </h:inputText>
-                    <p:message for="username" display="icon" />
                     
-                    <p:outputLabel for="major" value="Major:" />
-                    <h:inputText id="major" value="#{accountManager.major}" 
-                                 required="true" label="Major">
-                        <f:validateLength minimum="4" />
-                    </h:inputText>
-                    <p:message for="major" display="icon" />
-                    
-                    <p:outputLabel for="year" value="School Year" />
-                    <h:selectOneMenu id="year" value="#{accountManager.schoolYear}" required="true">
-                        <f:selectItems value="#{accountManager.school_years}"/>
-                    </h:selectOneMenu>
-                    <p:message for="year" display="icon" /> 
-
-                    <p:outputLabel for="password" value="Password:" />
-                    <h:inputSecret id="password" value="#{accountManager.password}" 
-                                required="true" label="Password">
-                        <f:validator validatorId="passwordValidator" /> 
-                    </h:inputSecret>
-                    <p:message for="password" display="icon" />
-
-                    <p:outputLabel for="confirmPassword" value="Confirm Password:" />
-                    <h:inputSecret id="confirmPassword" 
-                                required="true" label="Confirm Password">
-                    </h:inputSecret>
-                    <p:message for="confirmPassword" display="icon"/>
-                    
-                    <p:outputLabel for="security_ques" value="Security Question" />
-                    <h:selectOneMenu id="security_ques" value="#{accountManager.security_question}" required="true">
-                        <f:selectItems value="#{accountManager.security_questions}"/>
-                    </h:selectOneMenu>
-                    <p:message for="security_ques" display="icon" />                    
-                  
-                    <p:outputLabel for="security_ans" value="Answer" />
-                    <h:inputText id="security_ans" value="#{accountManager.security_answer}" 
-                                 required="true" label="city">
-                        <f:validateLength minimum="4" />
-                    </h:inputText>
-                    <p:message for="security_ans" display="icon" />  
-                    
-                    
-                    <h:selectOneMenu id="category1" label="Activity Goal"
-                                     value="#{accountManager.category1}" required="true"
-                                                 requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
-                    </h:selectOneMenu>
-                    
-                    <h:inputText id="skill1" label="Skill 1" value="#{accountManager.skill1}" a:placeholder="Skill 1"
-                                             required="true" requiredMessage="Last Name is required." />
-                    <p:message for="skill1" display="icon" />
-                    
-                    <h:selectOneMenu id="category2" label="Activity Goal"
-                                     value="#{accountManager.category2}" required="true"
-                                                 requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
-                    </h:selectOneMenu>
-                    
-                    <h:inputText id="skill2" label="Skill 2" value="#{accountManager.skill2}" a:placeholder="Skill 2"
-                                             required="true" requiredMessage="Last Name is required." />
-                    <p:message for="skill2" display="icon" />
-                    
-                    <h:selectOneMenu id="category3" label="Activity Goal"
-                                     value="#{accountManager.category3}" required="true"
-                                                 requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
-                    </h:selectOneMenu>
-                    
-                    
-                    <h:inputText id="skill3" label="Skill 3" value="#{accountManager.skill3}" a:placeholder="Skill 3"
-                                             required="true" requiredMessage="Last Name is required." />
-                    <p:message for="skill3" display="icon" />
-                    
-                    <h:selectOneMenu id="category4" label="Activity Goal"
-                                     value="#{accountManager.category4}" required="true"
-                                                 requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
-                    </h:selectOneMenu>
-                    
-                    <h:inputText id="skill4" label="Skill 4" value="#{accountManager.skill4}" a:placeholder="Skill 4"
-                                             required="true" requiredMessage="Last Name is required." />
-                    <p:message for="skill4" display="icon" />
-                    
-                    <h:selectOneMenu id="category5" label="Activity Goal"
-                                     value="#{accountManager.category5}" required="true"
-                                                 requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
-               
-                    </h:selectOneMenu>
-                    
-                    <h:inputText id="skill5" label="Skill 5" value="#{accountManager.skill5}" a:placeholder="Skill 5"
-                                             required="true" requiredMessage="Last Name is required." />
-                    <p:message for="skill5" display="icon" />
-                    
-                </h:panelGrid>
-            </p:panel>
-            <h:outputLabel id="error" value="#{accountManager.statusMessage}"  />
-            <br/>
-            <h:commandButton class="btn btn-lg btn-success btn-block" id="submit" 
-                             action="#{accountManager.createAccount()}" value="Submit" />   
-            <h:button class="btn btn-lg btn-danger" id="cancel" outcome="index" value="Cancel" />
-            </h:form>
-        </div>
+                </div>
+                </div>
+                </section>
+            </ui:define>
+        </ui:composition>
     </h:body>
 
 </html>

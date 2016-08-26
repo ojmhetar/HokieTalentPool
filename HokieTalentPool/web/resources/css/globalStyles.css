@@ -228,6 +228,8 @@ li a:hover:not(.active) {
     
 }
 
-#form-login .button{
-   margin:2px; 
+#form-create .input {
+    
+    margin: 10px;
+
 }

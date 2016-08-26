@@ -1,49 +1,54 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-    <h:head>
-        <title>Users</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
-        <h:outputStylesheet library="css" name="globalStyles.css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.1.2/css/bulma.min.css"/>
-    </h:head>
     <h:body>
-        <section class="hero is-primary is-fullheight">
-        <div align="center" class="hero-body">
-            <div class="container has-text-centered">
-            <h:form class="form-signin">    
-                <div class="columns">
-                    <div class="column"> </div> 
-                    <div class="column">
-                <div id="form-login" align="center">    
-                    <p class="control has-icon">
-                        <h:inputText class="form-control input" id="loginname" value="#{loginManager.username}"  a:placeholder="Username"/>
-                    </p>
+        <ui:composition template="template/siteTemplate.xhtml">
+            <!-- Page title -->
+            <title><ui:define name="title">Nectar</ui:define></title>
+            <!-- Additional CSS styles needed -->
+            <ui:define name="css">
+                <link rel="stylesheet" type="text/css" href="resources/css/index.css"/>
+            </ui:define>
+            <!-- Additional JS files needed -->
+            
+            <!-- Page content -->
+            <ui:define name="editableContent">
+                <section class="hero is-primary is-fullheight">
+                    <div align="center" class="hero-body">
+                        <div class="container has-text-centered">
+                        <h:form class="form-signin">    
+                            <div class="columns">
+                                <div class="column"> </div> 
+                                <div class="column">
+                           <div id="form-login" align="center">    
+                                <p class="control has-icon">
+                                    <h:inputText class="form-control input" id="loginname" value="#{loginManager.username}"  a:placeholder="Username"/>
+                                </p>
 
-                    <p class="control has-icon">
-                        <h:inputSecret class="form-control input"  id="password" value="#{loginManager.password}" a:placeholder="Password"/>
-                    </p>
-                <br/>
-                <fieldset style="width:40%; margin:0 auto;">
-                    <h:commandButton id="login"  action="#{loginManager.loginUser()}" value="Login" styleClass="buttonText button is-success"/>
-                    <h:commandButton id="create"  action="#{loginManager.createUser()}" value="Sign Up" styleClass="buttonText button is-warning"/>
-<!--                    <h:commandButton id="retrieve"  action="#{loginManager.resetPassword()}" value="Forgot Password" styleClass="buttonText"/>                -->
-                </fieldset>  
-                </div>
-                <br/>
-                <h:outputLabel value ="#{loginManager.errorMessage}" />
+                                <p class="control has-icon">
+                                    <h:inputSecret class="form-control input"  id="password" value="#{loginManager.password}" a:placeholder="Password"/>
+                                </p>
+                            <br/>
+                            <fieldset style="width:40%; margin:0 auto;">
+                                <h:commandButton id="login"  action="#{loginManager.loginUser()}" value="Login" styleClass="buttonText button is-success"/>
+                                <h:commandButton id="create"  action="#{loginManager.createUser()}" value="Sign Up" styleClass="buttonText button is-warning"/>
+            <!--                    <h:commandButton id="retrieve"  action="#{loginManager.resetPassword()}" value="Forgot Password" styleClass="buttonText"/>                -->
+                            </fieldset>  
+                            </div>
+                            <br/>
+                            <h:outputLabel value ="#{loginManager.errorMessage}" />
+                                </div>
+                            <div class="column"> </div> 
+                            </div> 
+                        </h:form>
+                        </div>
                     </div>
-                <div class="column"> </div> 
-                </div> 
-            </h:form>
-            </div>
-        </div>
-        </section>
-           
+                </section>
+            </ui:define>
+        </ui:composition>
     </h:body>
-
 </html>
-
