@@ -57,19 +57,6 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                         <f:validateLength minimum="4" />
                     </h:inputText>
                     <p:message for="username" display="icon" />
-                    
-                    <p:outputLabel for="major" value="Major:" />
-                    <h:inputText id="major" value="#{accountManager.major}" 
-                                 required="true" label="Major">
-                        <f:validateLength minimum="4" />
-                    </h:inputText>
-                    <p:message for="major" display="icon" />
-                    
-                    <p:outputLabel for="year" value="School Year" />
-                    <h:selectOneMenu id="year" value="#{accountManager.schoolYear}" required="true">
-                        <f:selectItems value="#{accountManager.school_years}"/>
-                    </h:selectOneMenu>
-                    <p:message for="year" display="icon" /> 
 
                     <p:outputLabel for="password" value="Password:" />
                     <h:inputSecret id="password" value="#{accountManager.password}" 
@@ -84,24 +71,13 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                     </h:inputSecret>
                     <p:message for="confirmPassword" display="icon"/>
                     
-                    <p:outputLabel for="security_ques" value="Security Question" />
-                    <h:selectOneMenu id="security_ques" value="#{accountManager.security_question}" required="true">
-                        <f:selectItems value="#{accountManager.security_questions}"/>
-                    </h:selectOneMenu>
-                    <p:message for="security_ques" display="icon" />                    
-                  
-                    <p:outputLabel for="security_ans" value="Answer" />
-                    <h:inputText id="security_ans" value="#{accountManager.security_answer}" 
-                                 required="true" label="city">
-                        <f:validateLength minimum="4" />
-                    </h:inputText>
-                    <p:message for="security_ans" display="icon" />  
-                    
-                    
                     <h:selectOneMenu id="category1" label="Activity Goal"
                                      value="#{accountManager.category1}" required="true"
                                                  requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
                     </h:selectOneMenu>
                     
                     <h:inputText id="skill1" label="Skill 1" value="#{accountManager.skill1}" a:placeholder="Skill 1"
@@ -111,7 +87,10 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                     <h:selectOneMenu id="category2" label="Activity Goal"
                                      value="#{accountManager.category2}" required="true"
                                                  requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
                     </h:selectOneMenu>
                     
                     <h:inputText id="skill2" label="Skill 2" value="#{accountManager.skill2}" a:placeholder="Skill 2"
@@ -121,9 +100,11 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                     <h:selectOneMenu id="category3" label="Activity Goal"
                                      value="#{accountManager.category3}" required="true"
                                                  requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
                     </h:selectOneMenu>
-                    
                     
                     <h:inputText id="skill3" label="Skill 3" value="#{accountManager.skill3}" a:placeholder="Skill 3"
                                              required="true" requiredMessage="Last Name is required." />
@@ -132,7 +113,10 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                     <h:selectOneMenu id="category4" label="Activity Goal"
                                      value="#{accountManager.category4}" required="true"
                                                  requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
                     </h:selectOneMenu>
                     
                     <h:inputText id="skill4" label="Skill 4" value="#{accountManager.skill4}" a:placeholder="Skill 4"
@@ -142,8 +126,10 @@ Copyright © 2016 Ojas Mhetar. All rights reserved.
                     <h:selectOneMenu id="category5" label="Activity Goal"
                                      value="#{accountManager.category5}" required="true"
                                                  requiredMessage="Category is required.">
-                        <f:selectItems value="#{accountManager.categories}" />
-               
+                        <f:selectItem itemValue="#{null}" itemLabel="--Select Category--" />
+                        <f:selectItem itemValue="Engineering" itemLabel="Engineering" />
+                        <f:selectItem itemValue="Business" itemLabel="Business" />
+                        <f:selectItem itemValue="Design" itemLabel="Design" />
                     </h:selectOneMenu>
                     
                     <h:inputText id="skill5" label="Skill 5" value="#{accountManager.skill5}" a:placeholder="Skill 5"

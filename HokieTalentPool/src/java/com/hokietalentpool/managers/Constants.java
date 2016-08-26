@@ -36,16 +36,8 @@ public class Constants {
     
     public static final String[] CATEGORIES = { "Business",
         "Engineering",
-        "Marketing" 
-    };
-    
-    public static final String[] SCHOOL_YEARS = {  "Freshman",
-        "Softomore",
-        "Junior",
-        "Senior",
-        "Alumni",
-        "Graduate Student",
-        "Faculty??"    
+        "Marketing"
+        
     };
 
 }

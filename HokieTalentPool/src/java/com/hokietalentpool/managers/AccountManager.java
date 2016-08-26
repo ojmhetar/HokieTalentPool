@@ -50,9 +50,9 @@ public class AccountManager implements Serializable {
     private String category5;
     private String skill5; 
     
+    private final String[] categoryList = Constants.CATEGORIES;
     private Map<String, Object> security_questions;
     private Map<String, Object> categories; 
-    private Map<String, Object> school_years;
     
     private User selected;
     
@@ -76,6 +76,10 @@ public class AccountManager implements Serializable {
 //    private PhotoFacade photoFacade;
 
   
+
+    public String[] getCategoryList() {
+        return categoryList; 
+    }
 
 
     /**
@@ -236,23 +240,7 @@ public class AccountManager implements Serializable {
         this.skill5 = skill; 
     }
     
-    public void setMajor(String major) {
-        this.major = major; 
-    }
-    
-    public String getMajor() {
-        return major; 
-    }
-    
-    public void setSchoolYear(int schoolYear) {
-        this.schoolYear = schoolYear; 
-    }
-    
-    public int getSchoolYear(){
-        return schoolYear; 
-    }
-    
-    public int getSecurity_question() {
+     public int getSecurity_question() {
         return security_question;
     }
 
@@ -287,17 +275,6 @@ public class AccountManager implements Serializable {
         }
         return categories;
     }
-    
-    public Map<String, Object> getSchool_years() {
-        if (school_years == null) {
-            school_years = new LinkedHashMap<>();
-            for (int i = 0; i < Constants.SCHOOL_YEARS.length; i++) {
-                school_years.put(Constants.SCHOOL_YEARS[i], i);
-            }
-        }
-        return school_years;
-    }
-    
     
     /**
      * @return the statusMessage
