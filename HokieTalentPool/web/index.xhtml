@@ -1,27 +1,49 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Users</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet name="css/jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="globalStyles.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.1.2/css/bulma.min.css"/>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
-        <br />
-        <h:link outcome="/skill/List" value="Show All Skill Items"/>
-        <br />
-        <h:link outcome="/user/List" value="Show All User Items"/>
-        <br />
-        <h:link outcome="/skill/List" value="Show All Skill Items"/>
-        <br />
-        <h:link outcome="/user/List" value="Show All User Items"/>
+        <section class="hero is-primary is-fullheight">
+        <div align="center" class="hero-body">
+            <div class="container has-text-centered">
+            <h:form class="form-signin">    
+                <div class="columns">
+                    <div class="column"> </div> 
+                    <div class="column">
+                <div id="form-login" align="center">    
+                    <p class="control has-icon">
+                        <h:inputText class="form-control input" id="loginname" value="#{loginManager.username}"  a:placeholder="Username"/>
+                    </p>
+
+                    <p class="control has-icon">
+                        <h:inputSecret class="form-control input"  id="password" value="#{loginManager.password}" a:placeholder="Password"/>
+                    </p>
+                <br/>
+                <fieldset style="width:40%; margin:0 auto;">
+                    <h:commandButton id="login"  action="#{loginManager.loginUser()}" value="Login" styleClass="buttonText button is-success"/>
+                    <h:commandButton id="create"  action="#{loginManager.createUser()}" value="Sign Up" styleClass="buttonText button is-warning"/>
+<!--                    <h:commandButton id="retrieve"  action="#{loginManager.resetPassword()}" value="Forgot Password" styleClass="buttonText"/>                -->
+                </fieldset>  
+                </div>
+                <br/>
+                <h:outputLabel value ="#{loginManager.errorMessage}" />
+                    </div>
+                <div class="column"> </div> 
+                </div> 
+            </h:form>
+            </div>
+        </div>
+        </section>
+           
     </h:body>
-
-
-
 
 </html>
 
