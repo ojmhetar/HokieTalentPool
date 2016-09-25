@@ -21,6 +21,7 @@ body {
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        
 }
 
 p {
@@ -229,7 +230,10 @@ li a:hover:not(.active) {
 }
 
 #form-create .input {
-    
-    margin: 10px;
+    width: 83%;
+    margin: 7px;
+    border: none;
+    border-bottom: 2px solid gainsboro;
 
 }
+
