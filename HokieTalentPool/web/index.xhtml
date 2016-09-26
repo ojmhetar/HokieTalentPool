@@ -17,7 +17,7 @@
             
             <!-- Page content -->
             <ui:define name="editableContent">
-                <section class="hero is-primary is-fullheight">
+                <section class="hero is is-fullheight">
                     <div align="center" class="hero-body">
                         <div class="container has-text-centered">
                         <h:form class="form-signin">    
@@ -33,10 +33,12 @@
                                     <h:inputSecret class="form-control input"  id="password" value="#{loginManager.password}" a:placeholder="Password"/>
                                 </p>
                             <br/>
-                            <fieldset style="width:40%; margin:0 auto;">
-                                <h:commandButton id="login"  action="#{loginManager.loginUser()}" value="Login" styleClass="buttonText button is-success"/>
-                                <h:commandButton id="create"  action="#{loginManager.createUser()}" value="Sign Up" styleClass="buttonText button is-warning"/>
-            <!--                    <h:commandButton id="retrieve"  action="#{loginManager.resetPassword()}" value="Forgot Password" styleClass="buttonText"/>                -->
+                            <fieldset style="width:20%; margin:0 auto;">
+                                <h:commandButton id="login"  action="#{loginManager.loginUser()}" value="Login" styleClass="buttonText button is-one-quarter"/>
+                                <!--<h:commandButton id="retrieve"  action="#{loginManager.resetPassword()}" value="Forgot Password" styleClass="buttonText button is"/>-->  
+                                <h:commandButton id="create"  action="#{loginManager.createUser()}" value="Sign up" styleClass="buttonText button is-white"/>
+                                <!--<a href="loginManager.createUser()">Sign up</a>-->
+                                
                             </fieldset>  
                             </div>
                             <br/>
