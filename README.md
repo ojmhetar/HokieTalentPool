@@ -1,3 +1,3 @@
-The Hokie Talent Pool. 
+Nectar.
 
 Created by E-Club for all students of Virginia Tech. 

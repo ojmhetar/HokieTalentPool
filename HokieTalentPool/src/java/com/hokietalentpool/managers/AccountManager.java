@@ -37,7 +37,7 @@ public class AccountManager implements Serializable {
     private String statusMessage;
     private int security_question;
     private String security_answer;
-    private int schoolYear; 
+    private String graduationYear;
     private String major;
     private String category1;
     private String skill1; 
@@ -94,12 +94,26 @@ public class AccountManager implements Serializable {
     public String getFirstName() {
         return firstName;
     }
-
+    
     /**
      * @param firstName the first name to set
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+    
+    /**
+     * @return the graduation year
+     */
+    public String getGraduationYear() {
+        return graduationYear;
+    }
+    
+    /**
+     * @param graduationYear the graduation year to set
+     */
+    public void setGraduationYear(String graduationYear) {
+        this.graduationYear = graduationYear;
     }
 
     /**
