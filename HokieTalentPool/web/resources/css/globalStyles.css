@@ -231,9 +231,17 @@ li a:hover:not(.active) {
 
 #form-create .input {
     width: 98%;
-    margin: 7px;
+    margin: 6.5px;
+    margin-left: 0px;
+    margin-right: 0px;
     border: none;
-    border-bottom: 2px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    box-shadow: none;
+    padding: 2px;
+    
+}
 
+#form-create {
+    margin-top: 14%;
 }
 
