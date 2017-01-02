@@ -7,8 +7,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <head>
-        <title>Sign In</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Search</title>
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
     </head>
     <body>
        
@@ -18,9 +18,15 @@
          
                 <link rel="stylesheet" type="text/css" href="resources/css/recommendations.css"/>
             
-                <div id="page-title">Search Skills</div>
+                <div id="page-title">Search</div>
                 <div align="center"> 
-
+                    
+                    <div class="container">
+                        
+                        
+                    </div>
+                    
+<!--
                     <h:form id="skill_search">
                             <span class="section-header">Please enter skill to search for</span><br/><br/>
                             <h:inputText id="skill-value" label="Skill to search for" class="input-control"
@@ -42,10 +48,10 @@
                                              action="#{skillManager.searchCategory()}" />
                     </h:form>
                     <br /><br />
-                    
+-->
                     
                     <!--Display the results for the table -->
-                    <p:dataTable class="rec-table" var="skill" value="#{skillManager.results}">
+ <!--                   <p:dataTable class="rec-table" var="skill" value="#{skillManager.results}">
 
                         <p:column headerText="User's first name">
                             <h:outputText value="#{skill.userId.firstName}" />
@@ -66,7 +72,7 @@
                     </p:dataTable>
                     <br /><br /><br /><br /><br /><br />
                     
-              
+-->
                 </div>
            
     </body>

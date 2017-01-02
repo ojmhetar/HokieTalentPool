@@ -26,17 +26,17 @@
                                 <div class="column">
                            <div id="form-login" align="center">    
                                 <p class="control has-icon">
-                                    <h:inputText class="form-control input" id="loginname" value="#{loginManager.username}"  a:placeholder="Username"/>
+                                    <h:inputText class="form-control input" style="border: none; border-bottom: 2px solid gainsboro;" id="loginname" value="#{loginManager.username}"  a:placeholder="Username"/>
                                 </p>
 
                                 <p class="control has-icon">
-                                    <h:inputSecret class="form-control input"  id="password" value="#{loginManager.password}" a:placeholder="Password"/>
+                                    <h:inputSecret class="form-control input" style="border: none; border-bottom: 2px solid gainsboro;" id="password" value="#{loginManager.password}" a:placeholder="Password"/>
                                 </p>
                             <br/>
                             <fieldset style="width:20%; margin:0 auto;">
                                 <h:commandButton id="login"  action="#{loginManager.loginUser()}" value="Login" styleClass="buttonText button is-one-quarter"/>
                                 <!--<h:commandButton id="retrieve"  action="#{loginManager.resetPassword()}" value="Forgot Password" styleClass="buttonText button is"/>-->  
-                                <h:commandButton id="create"  action="#{loginManager.createUser()}" value="Sign up" styleClass="buttonText button is-white"/>
+                                <h:commandButton id="create"  action="#{loginManager.createUser()}" value="create an account!" styleClass="buttonText button is-white"/>
                                 <!--<a href="loginManager.createUser()">Sign up</a>-->
                                 
                             </fieldset>  
