@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'NexaBold';
+    src: url('fonts/NexaBold.otf');
+}
+
+@font-face {
+    font-family: 'NexaLight';
+    src: url('fonts/NexaLight.otf');
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('fonts/RobotoLight.ttf');
+}
+
+body {
+    margin: 0px;
+    background #000;
+}
+
+#header {
+    width: 100%;
+    height: 40px;
+    border: 1px, solid blue;
+    padding: 0px;
+    position: absolute;
+}
+
+#container {
+    width: 80%;
+    padding-top: 80px;
+    text-align: center;
+}
+
+.item_bar {
+    float: right;
+    padding: 5px;
+}
+.logo {
+    float: left;
+    padding: 5px;
+}
+
+#profile_picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+#profile_name {
+    font-family: 'NexaBold';
+    color: #000000;
+    font-size: 40px;
+    padding: 5px;
+}
+
+#profile_graduation {
+    font-family: 'NexaLight';
+    color: #787878;
+    font-size: 17px;
+    padding: 3px;
+}
+
+#profile_picture,
+#profile_name,
+#profile_graduation,
+#container {
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+#btn_container {
+    width: 350px;
+    display: block;
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    height: 25px;
+    padding: 20px;
+}
+
+.btn_working,
+.btn_join {
+    -webkit-border-radius: 3;
+    -moz-border-radius: 3;
+    border-radius: 3px;
+    font-family: 'RobotoLight';
+    color: #787878;
+    font-size: 14px;
+    background: #ffffff;
+    padding: 2px 10px 2px 10px;
+    border: solid #000000 1px;
+    text-decoration: none;
+    width: 140px;
+    display: block;
+    position: relative;
+}
+
+.btn_working:hover,
+.btn_join:hover {
+    background: #F6A623;
+    text-decoration: none;
+    border: solid #F6A623 1px;
+    color: #FFFFFF;
+}
+
+.btn_working {
+    float: left;
+}
+.btn_join {
+    float: right;
+}
+
+#btn_contact {
+    -webkit-border-radius: 3;
+    -moz-border-radius: 3;
+    border-radius: 3px;
+    font-family: 'RobotoLight';
+    color: #787878;
+    font-size: 18px;
+    background: #ffffff;
+    padding: 2px 10px 2px 10px;
+    border: solid #000000 1px;
+    text-decoration: none;
+    width: 140px;
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
+#btn_contact:hover {
+    background: #F6A623;
+    text-decoration: none;
+    border: solid #F6A623 1px;
+    color: #FFFFFF;
+}
