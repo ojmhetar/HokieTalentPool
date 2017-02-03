@@ -147,20 +147,20 @@ h1 {
 
 .skill_container {
     max-width: 400px;
-    height: 200px;
-    border: blue 1px solid;
+    height: 210px;
+    /*border: blue 1px solid;*/
     margin: 0 auto;
     display: block;
-    margin-bottom: 40px;
     margin-top: 40px;
 }
 
 .skill_card {
     width: 100%;
-    height: 140px;
-    border: black 2px solid;
+    height: 150px;
+    border: black 3px solid;
     border-radius: 3px;
     display: block;
+    position: relative;
 }
 
 .skill_number {
@@ -190,4 +190,101 @@ h1 {
     text-decoration: none;
     border: solid #F6A623 1px;
     color: #FFFFFF;
+}
+
+#skill_left {
+    left: -40px;
+}
+
+#skill_right {
+    right: -40px;
+}
+
+#skill_left, #skill_right {
+    font-family: 'NexaBold';
+    text-align: left;
+    position: absolute;
+    font-size: 80px;
+    color: grey;
+    top: calc(50% - 40px);
+}
+
+#skill_left:hover, #skill_right:hover {
+    color: black;
+}
+
+#skill_status {
+    margin-bottom: 40px;
+}
+
+.skilldot {
+    float: center;
+    width: 20px;
+    height: 20px;
+    background-color: lightgrey;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.skilldot:hover {
+    background: #F6A623;
+}
+
+#skill1dot {
+    
+}
+
+.skill_dropdown {
+    float: center;
+    width: 200px;
+    margin-top: 15px;
+    font-size: 15px;
+    font-family: 'RobotoLight';
+}
+
+.skill_textbox {
+    float: center;
+    width: 200px;
+    margin-top: 20px;
+    padding: 4px;
+    font-size: 15px;
+    font-family: 'RobotoLight';
+}
+
+/* STARS */
+
+.skill_level {
+    font-size: 15px;
+    font-family: 'NexaBold';
+    display: inline-block;
+    margin-top: -3px;
+}
+
+.rating {
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 20px;
+}
+.rating-input {
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 0 0 -16px;
+    opacity: 0;
+}
+
+.rating-star {
+    position: relative;
+    float: right;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+}
+
+.rating-star:hover,
+.rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background-position: 0 0;
 }
